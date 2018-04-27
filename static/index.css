@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+/*app*/
+#app-continer{
+  width: 600px;
+  margin: 0 auto;
+}
+#wrap{
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+/*header*/
+#app-header{
+  margin-bottom: 5px;
+}
+#app-header input{
+  width: 560px;
+  height: 28px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 7px;
+}
+#app-header input:focus{
+  outline: none;
+  border-color: rgba(82,168,236,0.8);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.8);
+}
+/*main*/
+.app-main{
+  margin-left: 0;
+  border: 1px solid #ddd;
+}
+/*item*/
+li{
+  list-style: none;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 5px;
+  border-bottom: 1px solid #ddd;
+}
+li label{
+  float: left;
+  cursor: pointer;
+}
+li label li input{
+  vertical-align: middle;
+  margin-right: 6px;
+  position: relative;
+  top: -1px;
+}
+li button{
+  display: inline-block;
+  float: right;
+  margin-top: 3px;
+}
+li:before{
+  content: initial;
+}
+li:last-child{
+  border-bottom: none;
+}
+/*footer*/
+#app-footer{
+  height: 40px;
+  line-height: 40px;
+  padding-left: 6px;
+  margin-top: 5px;
+}
+#app-footer label{
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+}
+#app-footer label input{
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#app-footer button{
+  float: right;
+  margin-top: 5px;
+}
