@@ -1,6 +1,6 @@
 <template>
   <ul class="app-main">
-    <item v-for="(todo,index) in todos" :key="index" :todo="todo" :deleteTodo="deleteTodo" :index="index"></item>
+    <item v-for="(todo,index) in todos" :key="index" :todo="todo" :index="index"></item>
   </ul>
 </template>
 
@@ -8,8 +8,7 @@
   import item from './item.vue'
   export default {
     props:{
-      todos:Array,
-      deleteTodo:Function
+      todos:Array
     },
     components:{
       item

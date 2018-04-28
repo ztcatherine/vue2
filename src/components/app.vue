@@ -2,7 +2,7 @@
   <div id="app-continer">
     <div id="wrap">
       <app-header :addTodo="addTodo"></app-header>
-      <list :todos="todos" :deleteTodo="deleteTodo"></list>
+      <list :todos="todos"></list>
       <app-footer :selectAll="selectAll" :clearAll="clearAll" :todos="todos"></app-footer>
     </div>
   </div>
@@ -12,6 +12,7 @@
   import header from './header.vue'
   import list from './list.vue'
   import footer from './footer.vue'
+  import PubSub from 'pubsub-js'
   export default {
     data(){
       return{
@@ -20,6 +21,11 @@
     },
     mounted(){
       this.todos=JSON.parse(localStorage.getItem('todos_key')||'[]')
+      /*订阅消息*/
+      PubSub.subscribe('deleteTodo',(msg,index)=>{
+        //console.log(msg,index)
+        this.deleteTodo(index)
+      })
     },
     methods:{
       addTodo(todo){

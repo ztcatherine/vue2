@@ -1,5 +1,5 @@
 <template>
-  <li @mouseenter="handleEnter(true)" @mouseleave="handleEnter(false)" :style="{background:bgColor}">
+  <li @mouseenter="handleEnter(true)" @mouseleave="handleEnter(false)" :style="{background:'bgColor'}">
     <label>
       <input type="checkbox" v-model="todo.checked"/>
       <span>{{todo.title}}</span>
@@ -9,10 +9,10 @@
 </template>
 
 <script>
+  import PubSub from 'pubsub-js'
   export default {
     props:{
       todo:Object,
-      deleteTodo:Function,
       index:Number
     },
     data(){
@@ -34,7 +34,9 @@
       },
 
       deleteItem(){
-        this.deleteTodo(this.index)
+        //this.deleteTodo(this.index)
+        //发布消息
+        PubSub.publish('deleteTodo',this.index)
       }
     }
   }
